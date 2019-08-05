@@ -6,8 +6,21 @@ let conn = mysql.createConnection({
     user: 'root',
     password: 'root',
     database: 'albx'
-})
+});
 
+
+// 实现登录验证 mysql
 module.exports.login = (obj, callback) => {
-
+    // 创建sql语句
+    let sql = `select * from users where email = "${email}"`;
+    // 调用mysql模块
+    connection.query(sql, (err, results) => {
+        if (err) {
+            // 如果错误则直接返回错误
+            callback(err)
+        } else {
+            // results 查询返回一个一个结果集(数组) 如果数组有数据
+            callback(null, results[0])
+        }
+    })
 }

@@ -1,9 +1,13 @@
 // 引入express
 const express = require('express');
 // 引入fs
-const fs = require('fs');
+// const fs = require('fs');
+// 引入body-parser
+const bodyParser = require('body-parser');
 
 const router = require('./router')
+
+const session = require('express-session')
 
 // 创建服务器
 const app = express();
