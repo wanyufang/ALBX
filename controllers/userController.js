@@ -1,8 +1,9 @@
 // 这个控制器完成所有与用户相关的业务操作
-const usersModel = require('../models/usersModel.js');
+const usersModel = require('../models/usersModel');
 
 // 用户登录验证
-exports.login = (req, res) => {
+exports.login = function(req, res) {
+    console.log(req.body);
     // 接收参数
     let obj = req.body
     // 业务处理--调用数据模块
@@ -18,7 +19,7 @@ exports.login = (req, res) => {
                 if (data.password == obj.password) {
                     // 写入登录状态
                     // 使用session写入登陆状态
-                    req.session, isLogin = 'true'
+                    req.session.isLogin = 'true'
                     // 将当前用户对象存储到session
                     req.session.currentUser = data
 

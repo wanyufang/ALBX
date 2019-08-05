@@ -1,10 +1,13 @@
 $(function () {
-    $('.btnLogin').on('click', function () {
+    $('.alert-danger').hide();
+    $('#btnLogin').on('click', function () {
+        let data = $('form').serialize();
+        console.log(data);
         $.ajax({
             type: 'post',
             url: '/login',
             dataType: 'json',
-            data: $('form').serialize(),
+            data,
             success: function (res) {
                 console.log(res)
                 if(res.code == 400) {
