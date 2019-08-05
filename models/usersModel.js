@@ -10,11 +10,11 @@ let conn = mysql.createConnection({
 
 
 // 实现登录验证 mysql
-module.exports.login = (obj, callback) => {
+module.exports.login = (email, callback) => {
     // 创建sql语句
     let sql = `select * from users where email = "${email}"`;
     // 调用mysql模块
-    connection.query(sql, (err, results) => {
+    conn.query(sql, (err, results) => {
         if (err) {
             // 如果错误则直接返回错误
             callback(err)
