@@ -3,7 +3,7 @@ const usersModel = require('../models/usersModel');
 
 // 用户登录验证
 exports.login = function(req, res) {
-    console.log(req.body);
+    // console.log(req.body);
     // 接收参数
     let obj = req.body
     // 业务处理--调用数据模块

@@ -2,7 +2,7 @@ $(function () {
     $('.alert-danger').hide();
     $('#btnLogin').on('click', function () {
         let data = $('form').serialize();
-        console.log(data);
+        // console.log(data);
         $.ajax({
             type: 'post',
             url: '/login',

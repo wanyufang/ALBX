@@ -5,6 +5,7 @@ const router = express.Router();
 // 引入页面返回控制器
 const pagesController = require('./controllers/pagesController');
 const userController = require('./controllers/userController');
+const postsController = require('./controllers/postsController')
 
 // 配置路由
 // 前台页面
@@ -26,7 +27,12 @@ router.get('/admin/settings',pagesController.getAdminSettingsPage);
 router.get('/admin/slides',pagesController.getAdminSlidesPage);
 router.get('/admin/users',pagesController.getAdminUsersPage);
 
+
+// 业务处理路由
 router.post('/login',userController.login);
+router.get('/getAllPost',postsController.getAllPost)
+
+
 
 // 暴露router
 module.exports = router;

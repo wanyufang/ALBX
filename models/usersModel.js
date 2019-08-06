@@ -11,12 +11,12 @@ let conn = mysql.createConnection({
 
 // 实现登录验证 mysql
 exports.login = function(email, callback){
-    console.log(email);
+    // console.log(email);
     // 创建sql语句
     let sql = `select * from users where email = "${email}"`;
     // 调用mysql模块
     conn.query(sql, (err, results) => {
-        console.log(err);
+        // console.log(err);
         if (err) {
             // 如果错误则直接返回错误
             callback(err)

@@ -90,7 +90,7 @@ app.set('views', __dirname + '/views');
 app.use(function(req,res,next){
     // 三种场合不用登陆
     // 登录页 前台三个页面 有登录状态的
-    console.log(req.session.isLogin);
+    // console.log(req.session.isLogin);
     if(req.session.isLogin && req.session.isLogin == 'true'|| req.url == '/admin/login'|| req.url.indexOf('/admin')== -1) {
         next();
     }else {
