@@ -18,7 +18,7 @@ exports.getAllPost = (req, res) => {
             for (let i = 0; i < data.length; i++) {
                 // moment 转化时间格式
                 // format 格式化 里面进行自定义的日期格式
-                data[i].created = moment(data[i].created).format('YYYY-MM-DD HH-mm-ss')
+                // data[i].created = moment(data[i].created).format('YYYY-MM-DD HH-mm-ss')
             }
             // 如果查询成功 则将data数据返回
             res.json({ code: 200, msg: '查询成功', data: data })
