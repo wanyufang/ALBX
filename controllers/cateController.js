@@ -3,7 +3,7 @@ let cateModel = require('../models/cateModel')
 // 获取所有分类数据
 exports.getAllCate = (req,res)=>{
     cateModel.getAllCate((err,data)=>{
-        console.log(666);
+        // console.log(666);
         if(err){
             res.json({
                 code:400,msg:'数据查询失败'

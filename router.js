@@ -7,6 +7,8 @@ const pagesController = require('./controllers/pagesController');
 const userController = require('./controllers/userController');
 const postsController = require('./controllers/postsController');
 const cateController = require('./controllers/cateController');
+const uploadController = require('./controllers/uploadController');
+
 
 // 配置路由
 // 前台页面
@@ -33,7 +35,8 @@ router.get('/admin/users',pagesController.getAdminUsersPage);
 router.post('/login',userController.login);
 router.get('/getAllPost',postsController.getAllPost);
 router.get('/getAllCate',cateController.getAllCate);
-
+router.post('/uploadFile',uploadController.uploadFile);
+router.post('/addPost',postsController.addPost);
 
 // 暴露router
 module.exports = router;

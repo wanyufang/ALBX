@@ -1,7 +1,7 @@
 $(function () {
     // 定义全局的页码和页数量
     let pageNum = 1;
-    let pageSize = 3;
+    let pageSize = 2;
 
     function init(search) {
         $.ajax({
@@ -14,7 +14,7 @@ $(function () {
                 ...search
             },
             success: function (result) {
-                console.log(result);
+                // console.log(result);
                 // 生成动态数据结构
                 // 如果数据是对象就直接传递对象 如果数据是数组就包装为对象
                 let html = template('postListTemp', result.data);
@@ -51,7 +51,7 @@ $(function () {
         url: '/getAllCate',
         dataType: 'json',
         success: function(res){
-            console.log(res);
+            // console.log(res);
             // 生成分类下拉列表动态结构
             let str = '<option value = "all">所有分类</option>'
             for(let i = 0; i<res.data.length;i++) {
@@ -68,7 +68,7 @@ $(function () {
             cate:$('.cateSelector').val(),
             status: $('.statuSelector').val()
         }
-        console.log(obj);
+        // console.log(obj);
         // 发送ajax请求
         init(obj);
     })

@@ -9,7 +9,7 @@ $(function () {
             dataType: 'json',
             data,
             success: function (res) {
-                console.log(res)
+                // console.log(res)
                 if(res.code == 400) {
                     $('.alert-danger > span').text(res.msg)
                     $('.alert-danger').fadeIn(500).delay(2000).fadeOut(500)

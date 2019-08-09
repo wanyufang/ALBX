@@ -8,7 +8,7 @@ exports.getAllCate = (callback)=>{
         if(err){
             callback(err)
         }else{
-            console.log(data);
+            // console.log(data);
             callback(null,data)
         }
     })
